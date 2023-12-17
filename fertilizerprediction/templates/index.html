@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fertilizer prediction</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    />
+  </head>
+  <style>
+    html body {
+      margin: 0;
+      padding: 0;
+      /* background-image:"{{url_for('static', filename='a.jpg')}}"; */
+      background-image: url("{{ url_for('static', filename='a.jpg') }}");
+
+      background-size: cover;
+      font-family: "Poppins", sans-serif;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: start;
+    }
+
+    form {
+      background: rgba(red, green, blue, alpha);
+      padding: -2 px;
+      border-radius: 5px;
+
+      width: 20%;
+      height: 65vh;
+      color: #fff;
+      font-size: larger;
+      text-align: left;
+    }
+
+    input {
+      width: 100%;
+      padding: 0 px;
+      margin-bottom: 2%;
+      box-sizing: border-box;
+    }
+
+    button:hover {
+      width: 100%;
+      padding: 10px;
+      background-color: #fff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+  <style>
+    html body {
+      background-color: #ababc6;
+    }
+  </style>
+  <body>
+    <!-- <h1><p>Crop Recomendation System</p></h1> -->
+    <!-- {% if result %}
+        <p>{{ result }}</p>
+    {% endif %} -->
+    <form method="post" action="/predict">
+      <label>Temperature</label><br />
+      <input type="text" name="Temperature" /><br /><br />
+      <label>Humidity</label><br />
+      <input type="text" name="Humidity" /><br /><br />
+      <label>Moisture</label><br />
+      <input type="text" name="Moisture" /><br /><br />
+      <label> SoilType</label><br />
+      <input type="text" name="SoilType" /><br /><br />
+      <label>CropType</label><br />
+      <input type="text" name="CropType" /><br /><br />
+      <label>Nitrogen</label><br />
+      <input type="text" name="Nitrogen" /><br /><br />
+
+      <label>Phosphorous</label><br />
+      <input type="text" name="Phosphorous" /><br /><br />
+      <label>Potassium</label><br />
+      <input type="text" name="Potassium" /><br /><br />
+
+      <input type="submit" value="Predict" /><br /><br />
+    </form>
+  </body>
+</html>
